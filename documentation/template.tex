@@ -1,0 +1,93 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage[top=2cm]{geometry}
+\usepackage{fancyhdr}
+\renewcommand{\arraystretch}{1.2} %table height x1.5
+
+\title{
+    \textbf{PROJEKT \\ [.3cm] % .3cm of space below
+    \large System wspomagający wzmacnanie odporności psychicznej} \\ [.4cm]
+    \date{}
+    \author{}
+}
+
+\begin{document}
+
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[R]{\textbf{GoodMentality}}
+\fancyhead[C]{\date{\today}}
+\fancyhead[L]{\textit{Document title}}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[R]{\thepage}
+\fancyfoot[L]{\textit{File name}}
+
+\begin{titlepage}
+    \maketitle
+    \thispagestyle{empty} % excludes page number from the first page
+    \begin{center}
+        \begin{tabular}{  m{0.5\textwidth}  } 
+            \hline 
+            \Large Tytuł:  \textit{ Tytuł } \\ %title
+            \hline
+        \end{tabular}
+
+        \vspace{1.5cm}
+
+        \fbox{
+            \parbox{\textwidth}{
+                Streszczenie: \\ \\ \\ %streszczenie here
+                }
+            }
+
+        \vspace{1.5cm}
+
+        \begin{tabular}{ | m{0.25\textwidth} | m{0.73\textwidth}|  } 
+            \hline
+            Wersja: &   \\ %Version before '\\'
+            \hline
+            Data wydania: & \\ %Date before '\\'
+            \hline
+            Redaktor: & \\ %Author before '\\'
+            \hline
+            Współautorzy: & \\ %Coauthors before '\\'
+            \hline
+            Etap: & \\ %Stage before '\\'
+            \hline
+            Nazwa pliku: & \\ %File name before '\\'
+            \hline
+            Liczba stron: & \\ %Page number before '\\'
+            \hline
+            \end{tabular}
+    \end{center}    
+\end{titlepage}
+
+\tableofcontents
+
+\pagebreak
+
+\section{Wstęp}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in vestibulum ex. 
+Morbi ornare euismod dui quis scelerisque. Nullam nisi nibh, maximus a ligula eget, 
+pellentesque convallis quam. Mauris quis lectus molestie, sagittis turpis ac, iaculis 
+magna. Vivamus in tincidunt massa. Mauris tempor, lacus vitae feugiat sagittis, 
+justo velit aliquam tellus, at faucibus erat nisi eleifend arcu. Mauris porta 
+odio eros, sit amet sodales nisl volutpat vitae. Vestibulum quis tempor ante, 
+id faucibus dolor. Nullam diam lectus, malesuada sed ligula vitae, consequat 
+sagittis purus. Praesent in dignissim lectus. Suspendisse quam nisi, molestie 
+vel facilisis non, consequat et quam. Ut ornare congue cursus. Curabitur 
+at mauris turpis. Pellentesque quis erat diam. Vestibulum mollis ipsum nec 
+egestas suscipit. Nunc id ultricies libero.
+
+\section{Rozdział A}
+\subsection{Podrozdział a}
+\subsection{Podrozdział b}
+\section{Rozdział B}
+\section{Rozdział C}
+\subsection{Podrozdział a}
+\section{Podsumowanie}
+
+\end{document}}
