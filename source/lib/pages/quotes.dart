@@ -10,7 +10,6 @@ class QuotesPage extends StatefulWidget {
 }
 
 class _QuotesPageState extends State<QuotesPage> {
-
   final List<String> _quotes = const [
     "Be the change that you wish to see in the world.",
     "A day without laughter is a day wasted.",
@@ -19,12 +18,12 @@ class _QuotesPageState extends State<QuotesPage> {
     "There is nothing either good or bad, but thinking makes it so.",
   ];
 
-  String _pickQuote(){
+  String _pickQuote() {
     var index = Random().nextInt(5);
     return _quotes[index];
   }
 
-  void _addQuote(String quote){
+  void _addQuote(String quote) {
     _quotes.add(quote);
   }
 
@@ -34,19 +33,12 @@ class _QuotesPageState extends State<QuotesPage> {
       padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 10),
       child: Column(
         children: [
-          const Center(
-            child: Text(
-              'Quotes',
-              style: TextStyle(fontSize: 50),
-            ),
-          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 100),
-            child: Center(
-              child: Text(
-                _pickQuote(),
-                style: const TextStyle(fontSize: 20),
-              ),
+            child: Text(
+              _pickQuote(),
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 50, height: 1.7),
             ),
           ),
         ],
