@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "948729763405",
+    "project_id": "good-mentality",
+    "storage_bucket": "good-mentality.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948729763405:android:cfdb53e1ebac195805ae04",
+        "android_client_info": {
+          "package_name": "com.example.good_mentality"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtheNiEXXgnV69KBVvsrhIxyW5NZoaD3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
