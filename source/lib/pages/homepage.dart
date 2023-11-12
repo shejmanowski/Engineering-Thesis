@@ -9,18 +9,28 @@ import 'package:good_mentality/pages/tasks.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
+  final int selectedIndex;
+  const HomePage({super.key,this.selectedIndex = 0});
+ 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState(selectedIndex);
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
+ int _selectedIndex;
 
+  _HomePageState(this._selectedIndex);
   void _navigateBottomBar(int index) {
     setState(() {
       _selectedIndex = index;
+      if (index == 0) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Home(),
+          ),
+        );
+      }
     });
   }
 
@@ -73,6 +83,7 @@ class _HomePageState extends State<HomePage> {
             horizontal: 20,
           ),
           child: GNav(
+            selectedIndex: _selectedIndex,
             iconSize: 20,
             gap: 5,
             onTabChange: _navigateBottomBar,
