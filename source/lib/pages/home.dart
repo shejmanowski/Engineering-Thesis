@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:good_mentality/pages/homepage.dart';
-import 'package:good_mentality/pages/journal.dart';
-import 'package:good_mentality/pages/quotes.dart';
-import 'package:good_mentality/pages/sleep.dart';
-import 'package:good_mentality/pages/tasks.dart';
 import 'package:flutter/cupertino.dart';
 
 class Home extends StatelessWidget {

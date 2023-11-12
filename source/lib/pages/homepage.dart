@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
     FirebaseAuth.instance.signOut();
   }
 
-  final List<Widget> _pages = const [
+  final List<Widget> _pages = [
     Home(),
     SleepPage(),
     QuotesPage(),
