@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
+import 'package:good_mentality/pages/journal_detail.dart';
 class FirestoreDataPage extends StatefulWidget {
   final String userId;
 
@@ -21,7 +21,7 @@ class _FirestoreDataPageState extends State<FirestoreDataPage> {
 
   Future<List<Map<String, dynamic>>> fetchData() async {
     try {
-      final collectionReference = FirebaseFirestore.instance.collection('data');
+      final collectionReference = FirebaseFirestore.instance.collection('journal');
 
       QuerySnapshot querySnapshot = await collectionReference
           .where('userId', isEqualTo: widget.userId)
@@ -48,7 +48,10 @@ class _FirestoreDataPageState extends State<FirestoreDataPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Firestore Data'),
+        title: Text('Twoja historia',style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
+          ),
+          centerTitle: true,
+          elevation: 0,
       ),
       body: FutureBuilder(
         future: data,
@@ -105,11 +108,11 @@ class _FirestoreDataPageState extends State<FirestoreDataPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Date: ${entries[index]['timestamp']}',
+                          'Data: ${entries[index]['timestamp']}',
                           style: TextStyle(fontSize: 16, color: Colors.black),
                         ),
                         Text(
-                          'Mood: ${entries[index]['mood']}',
+                          'Humor: ${entries[index]['mood']}',
                           style: TextStyle(fontSize: 16, color: Colors.black),
                         ),
                       ],
@@ -121,32 +124,9 @@ class _FirestoreDataPageState extends State<FirestoreDataPage> {
           }
         },
       ),
+      backgroundColor: Theme.of(context).colorScheme.background,
+
     );
   }
 }
 
-class DetailPage extends StatelessWidget {
-  final Map<String, dynamic> entry;
-
-  DetailPage({required this.entry});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Detail Page'),
-      ),
-      body: Column(
-        children: [
-          Text('Date: ${entry['timestamp']}'),
-          Text('mood: ${entry['mood']}'),
-          Text('text1: ${entry['text1']}'),
-          Text('text2: ${entry['text2']}'),
-          Text('text3: ${entry['text3']}'),
-          Text('text4: ${entry['text4']}'),
-
-        ],
-      ),
-    );
-  }
-}
