@@ -4,7 +4,7 @@ import 'package:good_mentality/pages/add_entry.dart';
 import 'package:good_mentality/pages/view_journal.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 class JournalPage extends StatefulWidget {
   const JournalPage({Key? key}) : super(key: key);
 
@@ -19,13 +19,26 @@ class _JournalPageState extends State<JournalPage> {
   @override
   void initState() {
     super.initState();
-    userId = "auzTXJmlmjSIdzwhsibDhio8Ro13";
+    getUserData();
     mood = getMoodForToday(userId);
+  }
+  Future<void> getUserData() async {
+    try {
+      User? user = FirebaseAuth.instance.currentUser;
+
+      if (user != null) {
+        setState(() {
+          userId = user.uid;
+        });
+      } 
+    } catch (error) {
+      print('Błąd: $error');
+    }
   }
 
   Future<String?> getMoodForToday(String userId) async {
     try {
-      final collectionReference = FirebaseFirestore.instance.collection('data');
+      final collectionReference = FirebaseFirestore.instance.collection('journal');
 
       String todayDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
 
@@ -124,7 +137,7 @@ class _JournalPageState extends State<JournalPage> {
               GestureDetector(
                 onTap: () {
                   
-                          Navigator.pushReplacement(
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => FirestoreDataPage(userId: userId),
@@ -162,7 +175,7 @@ class _JournalPageState extends State<JournalPage> {
                     } else {
                       return GestureDetector(
                         onTap: () async {
-                          Navigator.pushReplacement(
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => AddEntryPage(),
