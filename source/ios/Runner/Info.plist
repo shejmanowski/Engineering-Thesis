@@ -47,5 +47,13 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+    <string>fetch</string>
+    <string>remote-notification</string>
+	</array>
+	<key>NSCalendarsUsageDescription</key>
+	<string>We use your calendar for scheduling notifications</string>
+
 </dict>
 </plist>
