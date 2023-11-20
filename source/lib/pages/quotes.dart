@@ -1,6 +1,10 @@
-import 'dart:math';
+// ignore_for_file: prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:good_mentality/components/my_button.dart';
+import 'package:good_mentality/components/my_textfield.dart';
+import "dart:math";
 
 class QuotesPage extends StatefulWidget {
   const QuotesPage({super.key});
@@ -10,39 +14,138 @@ class QuotesPage extends StatefulWidget {
 }
 
 class _QuotesPageState extends State<QuotesPage> {
-  final List<String> _quotes = const [
-    "Be the change that you wish to see in the world.",
-    "A day without laughter is a day wasted.",
-    "You talk when you cease to be at peace with your thoughts.",
-    "May you live every day of your life.",
-    "There is nothing either good or bad, but thinking makes it so.",
-  ];
+  final TextEditingController quoteController = TextEditingController();
+  final TextEditingController authorController = TextEditingController();
+  var currentQuote = "...";
 
-  String _pickQuote() {
-    var index = Random().nextInt(5);
-    return _quotes[index];
+  void addQuoteDialogBox() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: Theme.of(context).colorScheme.background,
+          content: SizedBox(
+            height: 230,
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  MyTextField(
+                    hintText: "Type quote...",
+                    obscureText: false,
+                    controller: quoteController,
+                  ),
+                  MyTextField(
+                    hintText: "Type author...",
+                    obscureText: false,
+                    controller: authorController,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      MyButton(
+                        text: "Cancel",
+                        onTap: () {
+                          if (context.mounted) {
+                            Navigator.of(context).pop();
+                            quoteController.clear();
+                            authorController.clear();
+                          }
+                        },
+                      ),
+                      MyButton(
+                        text: "  Add  ",
+                        onTap: () {
+                          createQuoteDocument();
+                          if (context.mounted) {
+                            Navigator.of(context).pop();
+                            quoteController.clear();
+                            authorController.clear();
+                          }
+                        },
+                      ),
+                    ],
+                  )
+                ]),
+          ),
+        );
+      },
+    );
   }
 
-  void _addQuote(String quote) {
-    _quotes.add(quote);
+  Future<void> createQuoteDocument() async {
+    String quote = quoteController.text;
+    String quoteAuthor = authorController.text;
+    if (quote != "" && quoteAuthor != "") {
+      await FirebaseFirestore.instance.collection("Quotes").doc(quote).set({
+        'quote': quote,
+        'quoteAuthor': quoteAuthor,
+      });
+    }
+  }
+
+  Future<void> getRandomQuote() async {
+    setState(() {
+      FirebaseFirestore.instance
+          .collection('Quotes')
+          .get()
+          .then((QuerySnapshot querySnapshot) {
+        var random = Random();
+        currentQuote = querySnapshot.docs
+            .elementAt(random.nextInt(querySnapshot.docs.length))['quote'];
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 10),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 100),
-            child: Text(
-              _pickQuote(),
-              textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 50, height: 1.7),
+    return Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.background,
+        floatingActionButton: FloatingActionButton(
+          onPressed: addQuoteDialogBox,
+          tooltip: 'Add new quote',
+          backgroundColor: Theme.of(context).colorScheme.secondary,
+          child: Icon(
+            Icons.add,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(30),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                FractionallySizedBox(
+                  widthFactor: 0.6,
+                  child: Image.asset(
+                    'assets/images/brain.png',
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  padding: EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.primary,
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Text(
+                    currentQuote,
+                    style: TextStyle(
+                      fontSize: 35,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                MyButton(
+                  text: "I need new quote",
+                  onTap: getRandomQuote,
+                ),
+              ],
             ),
           ),
-        ],
-      ),
-    );
+        ));
   }
 }
