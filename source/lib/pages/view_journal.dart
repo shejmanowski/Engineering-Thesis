@@ -112,7 +112,7 @@ class _FirestoreDataPageState extends State<FirestoreDataPage> {
                           style: TextStyle(fontSize: 16, color: Colors.black),
                         ),
                         Text(
-                          'Humor: ${entries[index]['mood']}',
+                          'Humor: ${map(entries[index]['mood'])}',
                           style: TextStyle(fontSize: 16, color: Colors.black),
                         ),
                       ],
@@ -127,6 +127,23 @@ class _FirestoreDataPageState extends State<FirestoreDataPage> {
       backgroundColor: Theme.of(context).colorScheme.background,
 
     );
+  }
+  String map(String mood){
+    String mood_ret;
+    switch (mood) {
+    case '1':
+      mood_ret = "Zły";
+      break;
+    case '2':
+      mood_ret = "Średni";
+      break;
+    case '3':
+      mood_ret = "Dobry";
+      break;
+    default:
+      mood_ret = "?";
+  }
+    return mood_ret;
   }
 }
 

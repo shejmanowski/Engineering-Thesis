@@ -75,10 +75,12 @@ class _QuotesPageState extends State<QuotesPage> {
   Future<void> createQuoteDocument() async {
     String quote = quoteController.text;
     String quoteAuthor = authorController.text;
+
     if (quote != "" && quoteAuthor != "") {
       await FirebaseFirestore.instance.collection("Quotes").doc(quote).set({
         'quote': quote,
         'quoteAuthor': quoteAuthor,
+        'quuoteAccepted': "0"
       });
     }
   }
@@ -87,6 +89,7 @@ class _QuotesPageState extends State<QuotesPage> {
     setState(() {
       FirebaseFirestore.instance
           .collection('Quotes')
+          .where('quuoteAccepted', isEqualTo: '1')
           .get()
           .then((QuerySnapshot querySnapshot) {
         var random = Random();
