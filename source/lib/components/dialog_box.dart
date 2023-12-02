@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:good_mentality/components/dialog_button.dart';
 
 class DialogBox extends StatelessWidget {
-  final controller;
+  final controllerGoal;
+  final controllerTask;
   VoidCallback onSave;
   VoidCallback onCancel;
 
   DialogBox({
     super.key,
-    required this.controller,
+    required this.controllerGoal,
+    required this.controllerTask,
     required this.onSave,
     required this.onCancel,
   });
@@ -19,13 +21,20 @@ class DialogBox extends StatelessWidget {
     return AlertDialog(
       backgroundColor: Theme.of(context).colorScheme.primary,
       content: Container(
-        height: 120,
+        height: 180,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             // get user input
             TextField(
-              controller: controller,
+              controller: controllerGoal,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "Add goal",
+              ),
+            ),
+            TextField(
+              controller: controllerTask,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: "Add a new task",

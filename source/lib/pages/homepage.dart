@@ -5,6 +5,7 @@ import 'package:good_mentality/pages/home.dart';
 import 'package:good_mentality/pages/journal.dart';
 import 'package:good_mentality/pages/quotes.dart';
 import 'package:good_mentality/pages/sleep.dart';
+import 'package:good_mentality/pages/task_default.dart';
 import 'package:good_mentality/pages/tasks.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage> {
     Home(),
     SleepPage(),
     QuotesPage(),
-    TasksPage(),
+    TasksDefaultPage(),
     JournalPage(),
   ];
 
