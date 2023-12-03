@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 class Home extends StatelessWidget {
   const Home({super.key});
 
-@override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -28,46 +28,66 @@ class Home extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage(selectedIndex: 1)),
+                      MaterialPageRoute(
+                          builder: (context) => HomePage(selectedIndex: 1)),
                     );
                   },
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                    child: Center(
-                      child: Icon(
-                        CupertinoIcons.moon,
-                        size: 70,
-                        color: Theme.of(context).colorScheme.inversePrimary,
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 70,
+                        height: 70,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        child: Center(
+                          child: Icon(
+                            CupertinoIcons.moon,
+                            size: 50,
+                            color: Theme.of(context).colorScheme.inversePrimary,
+                          ),
+                        ),
                       ),
-                    ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        'Sennik',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
                   ),
                 ),
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage(selectedIndex: 4)),
+                      MaterialPageRoute(
+                          builder: (context) => HomePage(selectedIndex: 4)),
                     );
                   },
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                    child: Center(
-                      child: Icon(
-                        CupertinoIcons.doc_plaintext,
-                        size: 70,
-                        color: Theme.of(context).colorScheme.inversePrimary,
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 70,
+                        height: 70,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        child: Center(
+                          child: Icon(
+                            CupertinoIcons.doc_plaintext,
+                            size: 50,
+                            color: Theme.of(context).colorScheme.inversePrimary,
+                          ),
+                        ),
                       ),
-                    ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        'Dziennik',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -79,20 +99,29 @@ class Home extends StatelessWidget {
                   onTap: () {
                     // dodac info
                   },
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                    child: Center(
-                      child: Icon(
-                        CupertinoIcons.info_circle,
-                        size: 70,
-                        color: Theme.of(context).colorScheme.inversePrimary,
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 70,
+                        height: 70,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        child: Center(
+                          child: Icon(
+                            CupertinoIcons.info_circle,
+                            size: 50,
+                            color: Theme.of(context).colorScheme.inversePrimary,
+                          ),
+                        ),
                       ),
-                    ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        'Info',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -104,46 +133,66 @@ class Home extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage(selectedIndex: 2)),
-                    );                  
+                      MaterialPageRoute(
+                          builder: (context) => HomePage(selectedIndex: 2)),
+                    );
                   },
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                    child: Center(
-                      child: Icon(
-                        CupertinoIcons.quote_bubble,
-                        size: 70,
-                        color: Theme.of(context).colorScheme.inversePrimary,
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 70,
+                        height: 70,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        child: Center(
+                          child: Icon(
+                            CupertinoIcons.quote_bubble,
+                            size: 50,
+                            color: Theme.of(context).colorScheme.inversePrimary,
+                          ),
+                        ),
                       ),
-                    ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        'Cytaty',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
                   ),
                 ),
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage(selectedIndex: 3)),
+                      MaterialPageRoute(
+                          builder: (context) => HomePage(selectedIndex: 3)),
                     );
                   },
-                  child: Container(
-                    width: 100,
-                    height: 100,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                    child: Center(
-                      child: Icon(
-                        CupertinoIcons.list_bullet,
-                        size: 70,
-                        color: Theme.of(context).colorScheme.inversePrimary,
+                  child: Column(
+                    children: [
+                      Container(
+                        width: 70,
+                        height: 70,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                        child: Center(
+                          child: Icon(
+                            CupertinoIcons.list_bullet,
+                            size: 50,
+                            color: Theme.of(context).colorScheme.inversePrimary,
+                          ),
+                        ),
                       ),
-                    ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        'Planer',
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
                   ),
                 ),
               ],
@@ -154,4 +203,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-

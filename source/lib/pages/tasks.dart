@@ -56,12 +56,8 @@ class _TasksPageState extends State<TasksPage> {
       } else if (goal == false) {
         toDoList.removeAt(index);
       }
-      newToDoList = generateNewList(toDoList);
+      newToDoList = generateNewList(toDoList); //blad
     });
-    widget.onListUpdated(toDoList);
-    print(toDoList);
-    print("a");
-    print(newToDoList);
   }
 
   void createNewTask() {
@@ -95,7 +91,6 @@ class _TasksPageState extends State<TasksPage> {
         newToDoList = generateNewList(toDoList);
       }
     });
-    widget.onListUpdated(toDoList);
     print(toDoList);
     print("a");
     print(newToDoList);
@@ -136,7 +131,10 @@ class _TasksPageState extends State<TasksPage> {
       backgroundColor: Theme.of(context).colorScheme.background,
       floatingActionButton: FloatingActionButton(
         onPressed: createNewTask,
-        child: Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+          color: Theme.of(context).colorScheme.primary,
+        ),
       ),
       body: FutureBuilder(
         future: widget.toDoListt,
@@ -156,7 +154,7 @@ class _TasksPageState extends State<TasksPage> {
                   tasks: toDoList,
                   onChanged: (value, i, list_type) =>
                       checkBoxChanged(value, i, list_type),
-                  deleteFunction: (context, goal, i) => deleteTask(index, goal),
+                  deleteFunction: (context, goal, i) => deleteTask(i, goal),
                   modifyTodayTask: (i) => modifyTodayTask(i),
                 );
               },

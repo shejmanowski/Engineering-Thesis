@@ -41,7 +41,7 @@ class ToDoTile extends StatelessWidget {
             ],
           ),
           child: Container(
-            padding: EdgeInsets.all(24),
+            padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.primary,
               borderRadius: BorderRadius.circular(12),
@@ -61,6 +61,7 @@ class ToDoTile extends StatelessWidget {
                   child: Text(
                     taskName,
                     style: TextStyle(
+                      fontWeight: FontWeight.bold,
                       decoration: taskCompleted
                           ? TextDecoration.lineThrough
                           : TextDecoration.none,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:good_mentality/pages/journal_detail.dart';
+
 class FirestoreDataPage extends StatefulWidget {
   final String userId;
 
@@ -21,7 +22,8 @@ class _FirestoreDataPageState extends State<FirestoreDataPage> {
 
   Future<List<Map<String, dynamic>>> fetchData() async {
     try {
-      final collectionReference = FirebaseFirestore.instance.collection('journal');
+      final collectionReference =
+          FirebaseFirestore.instance.collection('journal');
 
       QuerySnapshot querySnapshot = await collectionReference
           .where('userId', isEqualTo: widget.userId)
@@ -48,10 +50,12 @@ class _FirestoreDataPageState extends State<FirestoreDataPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Twoja historia',style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
-          ),
-          centerTitle: true,
-          elevation: 0,
+        title: Text(
+          'Twoja historia',
+          style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
+        ),
+        centerTitle: true,
+        elevation: 0,
       ),
       body: FutureBuilder(
         future: data,
@@ -88,34 +92,38 @@ class _FirestoreDataPageState extends State<FirestoreDataPage> {
                     break;
                 }
 
-                return InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DetailPage(entry: entries[index]),
+                return Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              DetailPage(entry: entries[index]),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      margin: EdgeInsets.symmetric(vertical: 8),
+                      padding: EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: boxColor,
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                    );
-                  },
-                  child: Container(
-                    margin: EdgeInsets.symmetric(vertical: 8),
-                    padding: EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: boxColor,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Data: ${entries[index]['timestamp']}',
-                          style: TextStyle(fontSize: 16, color: Colors.black),
-                        ),
-                        Text(
-                          'Humor: ${map(entries[index]['mood'])}',
-                          style: TextStyle(fontSize: 16, color: Colors.black),
-                        ),
-                      ],
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Data: ${entries[index]['timestamp']}',
+                            style: TextStyle(fontSize: 16, color: Colors.black),
+                          ),
+                          Text(
+                            'Humor: ${map(entries[index]['mood'])}',
+                            style: TextStyle(fontSize: 16, color: Colors.black),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );
@@ -125,25 +133,24 @@ class _FirestoreDataPageState extends State<FirestoreDataPage> {
         },
       ),
       backgroundColor: Theme.of(context).colorScheme.background,
-
     );
   }
-  String map(String mood){
+
+  String map(String mood) {
     String mood_ret;
     switch (mood) {
-    case '1':
-      mood_ret = "Zły";
-      break;
-    case '2':
-      mood_ret = "Średni";
-      break;
-    case '3':
-      mood_ret = "Dobry";
-      break;
-    default:
-      mood_ret = "?";
-  }
+      case '1':
+        mood_ret = "Zły";
+        break;
+      case '2':
+        mood_ret = "Średni";
+        break;
+      case '3':
+        mood_ret = "Dobry";
+        break;
+      default:
+        mood_ret = "?";
+    }
     return mood_ret;
   }
 }
-
