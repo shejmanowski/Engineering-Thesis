@@ -9,16 +9,19 @@ import 'package:good_mentality/pages/task_default.dart';
 import 'package:good_mentality/pages/tasks.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
+import '../auth/auth.dart';
+import '../auth/login_or_register.dart';
+
 class HomePage extends StatefulWidget {
   final int selectedIndex;
-  const HomePage({super.key,this.selectedIndex = 0});
- 
+  const HomePage({super.key, this.selectedIndex = 0});
+
   @override
   State<HomePage> createState() => _HomePageState(selectedIndex);
 }
 
 class _HomePageState extends State<HomePage> {
- int _selectedIndex;
+  int _selectedIndex;
 
   _HomePageState(this._selectedIndex);
   void _navigateBottomBar(int index) {
@@ -37,6 +40,11 @@ class _HomePageState extends State<HomePage> {
 
   void logout() {
     FirebaseAuth.instance.signOut();
+    FirebaseAuth.instance.signOut();
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => AuthPage()),
+    );
   }
 
   final List<Widget> _pages = [
@@ -59,6 +67,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Theme.of(context).colorScheme.inversePrimary,
+        ),
         title: Text(
           _pagesNames[_selectedIndex],
           style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),

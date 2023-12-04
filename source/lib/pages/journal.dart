@@ -5,6 +5,7 @@ import 'package:good_mentality/pages/view_journal.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 class JournalPage extends StatefulWidget {
   const JournalPage({Key? key}) : super(key: key);
 
@@ -22,6 +23,7 @@ class _JournalPageState extends State<JournalPage> {
     getUserData();
     mood = getMoodForToday(userId);
   }
+
   Future<void> getUserData() async {
     try {
       User? user = FirebaseAuth.instance.currentUser;
@@ -30,7 +32,7 @@ class _JournalPageState extends State<JournalPage> {
         setState(() {
           userId = user.uid;
         });
-      } 
+      }
     } catch (error) {
       print('Błąd: $error');
     }
@@ -38,17 +40,18 @@ class _JournalPageState extends State<JournalPage> {
 
   Future<String?> getMoodForToday(String userId) async {
     try {
-      final collectionReference = FirebaseFirestore.instance.collection('journal');
+      final collectionReference =
+          FirebaseFirestore.instance.collection('journal');
 
       String todayDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
 
-      QuerySnapshot querySnapshot = await collectionReference
-          .where('userId', isEqualTo: userId)
-          .get();
+      QuerySnapshot querySnapshot =
+          await collectionReference.where('userId', isEqualTo: userId).get();
 
       if (querySnapshot.docs.isNotEmpty) {
-        List<Map<String, dynamic>> entries =
-            querySnapshot.docs.map((doc) => doc.data() as Map<String, dynamic>).toList();
+        List<Map<String, dynamic>> entries = querySnapshot.docs
+            .map((doc) => doc.data() as Map<String, dynamic>)
+            .toList();
 
         var entryForToday = entries.firstWhere(
           (entry) => entry['timestamp'] == todayDate,
@@ -72,7 +75,6 @@ class _JournalPageState extends State<JournalPage> {
       return null;
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -136,14 +138,12 @@ class _JournalPageState extends State<JournalPage> {
             children: <Widget>[
               GestureDetector(
                 onTap: () {
-                  
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => FirestoreDataPage(userId: userId),
-                            ),
-                          );
-                        
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FirestoreDataPage(userId: userId),
+                    ),
+                  );
                 },
                 child: Container(
                   width: 70,
@@ -193,9 +193,8 @@ class _JournalPageState extends State<JournalPage> {
                             child: Icon(
                               CupertinoIcons.add_circled,
                               size: 50,
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .inversePrimary,
+                              color:
+                                  Theme.of(context).colorScheme.inversePrimary,
                             ),
                           ),
                         ),

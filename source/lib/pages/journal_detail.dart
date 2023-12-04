@@ -5,39 +5,65 @@ class DetailPage extends StatelessWidget {
   final Map<String, dynamic> entry;
 
   DetailPage({required this.entry});
+  String map(String mood) {
+    String mood_ret;
+    switch (mood) {
+      case '1':
+        mood_ret = "Zły";
+        break;
+      case '2':
+        mood_ret = "Średni";
+        break;
+      case '3':
+        mood_ret = "Dobry";
+        break;
+      default:
+        mood_ret = "?";
+    }
+    return mood_ret;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Szczegóły',style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
-          ),
-          centerTitle: true,
-          elevation: 0,
+        title: Text(
+          'Szczegóły',
+          style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
+        ),
+        centerTitle: true,
+        elevation: 0,
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            _buildFieldContainer('Data', entry['timestamp'],context),
-            _buildFieldContainer('Humor', entry['mood'],context),
-            _buildFieldContainer('Co pozytywnie wpłynęło na twój humor?', entry['text1'],context),
-            _buildFieldContainer('Jakie przeciwnosci cię spotkały?', entry['text2'],context),
-            _buildFieldContainer('Za co jesteś wdzięczny?', entry['text3'],context),
-          ],
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            children: [
+              _buildFieldContainer('Data', entry['timestamp'], context),
+              _buildFieldContainer('Humor', map(entry['mood']), context),
+              _buildFieldContainer('Co pozytywnie wpłynęło na twój humor?',
+                  entry['text1'], context),
+              _buildFieldContainer(
+                  'Jakie przeciwnosci cię spotkały?', entry['text2'], context),
+              _buildFieldContainer(
+                  'Za co jesteś wdzięczny?', entry['text3'], context),
+            ],
+          ),
         ),
       ),
       backgroundColor: Theme.of(context).colorScheme.background,
-
     );
   }
 
   Widget _buildFieldContainer(String label, dynamic value, context) {
     return Container(
-      width: MediaQuery.of(context).size.width, // Szerokość równa szerokości ekranu
+      width: MediaQuery.of(context)
+          .size
+          .width, // Szerokość równa szerokości ekranu
       margin: EdgeInsets.all(8.0),
       padding: EdgeInsets.all(16.0),
       decoration: BoxDecoration(
-        color:  Theme.of(context).colorScheme.primary, // Kolor tła prostokąta
+        color: Theme.of(context).colorScheme.primary, // Kolor tła prostokąta
         borderRadius: BorderRadius.circular(8.0),
       ),
       child: Column(
@@ -46,18 +72,18 @@ class DetailPage extends StatelessWidget {
           Text(
             label,
             style: TextStyle(
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
-              color: Theme.of(context).colorScheme.inversePrimary// Kolor tekstu
-            ),
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+                color:
+                    Theme.of(context).colorScheme.inversePrimary // Kolor tekstu
+                ),
           ),
           SizedBox(height: 8.0),
           Text(
             '$value',
             style: TextStyle(
-              fontSize: 16.0,
-              color:  Theme.of(context).colorScheme.inversePrimary
-            ),
+                fontSize: 16.0,
+                color: Theme.of(context).colorScheme.inversePrimary),
           ),
         ],
       ),
