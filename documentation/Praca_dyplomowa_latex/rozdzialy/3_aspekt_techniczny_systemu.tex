@@ -1,0 +1,91 @@
+\chapter{Aspekt techniczny systemu}
+Poniższa część pracy skupia się na aspekcie technicznym tworzonego systemu.
+Dzięki przygotowanej w poprzednim rozdziale wizji aplikacji, możliwe jest
+skupienie się teraz na konkretnej implementacji. Przedstawione zostaną aspekty
+takie jak wybór technologii i architektura systemu. Opisany zostanie również
+proces implementacji i testowania.
+
+\section{Technologia implementacji}
+W dzisiejszym dynamicznym środowisku technologicznym, tworzenie aplikacji
+mobilnych stanowi zadanie wymagające przemyślanego podejścia do wyboru
+odpowiednich technologii. Wraz z różnorodnością dostępnych platform, języków
+programowania oraz narzędzi deweloperskich, napotykamy szeroki zakres możliwości
+i wyzwań podczas decydowania, jak zrealizować wizję aplikacji mobilnej. W miarę
+jak branża ewoluuje, zauważalne są rozbieżności pomiędzy różnymi technologiami,
+a także ich wpływ na wydajność, dostępność oraz doświadczenia użytkownika. Od
+natywnych aplikacji po rozwiązania hybrydowe i progresywne, każda opcja posiada
+swoje unikalne cechy, a dokonany wybór wpływa zarówno na proces deweloperski,
+jak i finalny produkt.
+
+Główne założenia technologiczne obejmowały:
+\begin{itemize}
+    \item \textbf{Przenośność} - istotną właściwością tworzenej aplikacji była
+    możliwość budowania stworzonego sytemu zarówno na telefony posiadające
+    system Android, jak i te, bazujące na iOS. Obecne technologie pozwalają na
+    budowanie plików wykonywalnych pod różne systemy z tego samego kodu
+    źródłowego. Było to kluczowe wymaganie wybieranej technologi, ponieważ w
+    znaczącym stopniu wpływało na czas realizacji, dzięki czemu możliwe było
+    skupienie się na samej implementacji funkcjonalności, bez zagłębiania się w
+    szczegóły przenoszenia kodu między systemami operacyjnymi.
+    \item \textbf{Aktualność} - kolejnym ważnym czynnikiem było to, czy dana
+    technologia używana jest obecnie w braży. Założeniem było zdobywanie wiedzy
+    oraz poznanie mechanizmów wysokopoziomowych technologii, które obecnie
+    najczęściej są wykorzystywane.
+    \item \textbf{Dokumentacja} - z powodu zagłębiania się w nowe obszary, warta
+    uwagi była dokumentacja i stopień jej rozwoju. Poznając nowe języki
+    programowania, biblioteki lub narzędzia, często ważniejsze od nich samych,
+    jest sposób w jaki zostały opisane. Porządna dokumentacja znacząco zmniejsza
+    próg wejścia oraz skraca czas potrzebny do nauki. Dodatkowym aspektem z nią
+    związanym jest społeczność danej technologii. W przypadkach, kiedy
+    społeczność taka jest duża i aktywna, znacznie łatwiej rozwijać aplikacje.
+    Można dzięki niej uzyskać obszerne materiały do nauki, pomoc w konfiguracji
+    środowiska lub znaleźć rozwiązanie pewnego problemu implementacyjnego.
+    \item \textbf{Skalowalność} - w przypadku chęci późniejszego rozwoju
+    aplikacji ważnym czynnikiem jest również łatwość z jaką może się ona
+    skalować. W opisywanej implementacji nie był to kluczowy aspekt, jednak było
+    to coś wartego uwagi. Nie ponosi się dużych kosztów tworząc od początku
+    oprogramowanie, które łatwo będzie skalować. W przeciwnym jednak razie,
+    można narazić się na wiele dodatkowej pracy oraz inne problemy w
+    przyszłości.
+    \item \textbf{Kompatybilność} - działanie każdej aplikacji internetowej
+    możemy podzielić na dwie strony. Jedną z nich jest strona prezentacji
+    zawartości użytkownikowi - tzw. frontend. Druga zajmuje się
+    przetwarzaniem informacji - backend. Najczęściej do realizacji części
+    prezentacji po stronie klienta oraz do części logiki po stronie serwera
+    wykorzystywane są dwie różne technologie, które muszą się ze sobą sprawnie
+    komunikować. W celu płynnego procesu pisania kodu źródłowego, konieczne było
+    dobranie odpowiednich technologii w taki sposób aby ich kompatybilność była
+    jak najlepsza.
+\end{itemize}
+
+\subsection{Frontend}
+Narzędzie, który zostało wybrane do tworzenia interfejsu użytkownika (UI) to
+Flutter, stworzony przez Google. Bazuje on na obiektowym języku Dart, tej samej
+firmy. Jest to nowa technologia, bardzo świeża na rynku - obecna od 2018 roku.
+Flutter jest narzędziem wieloplatformowy, co zapewnia, dzięki możliwości
+tłumaczenia języka Dart na natywny kod maszynowy dla systemów ARM oraz x86, a
+zatem w pełni spełnia wymaganie przenośności tworzonej aplikacji. Jest on już
+dziś używany przez wiele dużych firm, a z każdym rokiem ilość ta się zwiększa.
+Dokumentacja Fluttera jest niezwykle obszerna i stale rozwijana. Korzystanie z
+takich środowisk programistycznych jak Visual Studio Code, umożliwia nam dostęp
+do jego dokumentacji po wybraniu dowolnego implementowanego widżetu, bez
+konieczności otwierania przeglądarki. Istotnym elementem tego framework'u jest
+to, że wszystko co znajduje się we Flutterze to widżet. Kolejne elementy ekranu
+to kolejne widżety zagnieżdżone w sobie. Wpływa to na łatwość tworzenia
+skomplikowanych ekranów oraz ich reorganizacji. We Fluterze dostępne są dwie
+klasy, po których dziedziczy każdy ekran. \textit{StatelessWidget} oraz
+\textit{StatefulWidget}. W przypadku, gdy dany ekran ma elementy, które
+zmieniają jego stan podczas korzystania z niego (np. licznik, który wyświelta
+ile razy kliknęło się w ekran) konieczne jest zastosowanie
+\textit{StatefulWidget}, do każdego innego przypadku, kiedy ekran wyświetla
+jedynie statyczne informacje, przeznaczony jest \textit{StatelessWidget}. Inne
+zalty Fluttera to:
+\begin{itemize}
+    \item Możliwość szybkiej weryfikacji zmian wprowadzonych w kodzie, dzięki
+    funkcji HotReload, która umożliwia wprowadzanie zmian w kodzie przy otwartej
+    aplikacji.
+    \item Wysoka wydajność, która jest zbliżona do tych oferujących przez
+    klasyczne aplikacje natywne.
+\end{itemize}
+
+\subsection{Backend}

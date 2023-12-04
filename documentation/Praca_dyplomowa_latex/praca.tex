@@ -1,0 +1,75 @@
+\documentclass[nostrict]{szablonPG}
+
+%-------------------- Dodatkowe pakiety ---------------------
+\usepackage{listing_schemat}
+\usepackage{caption}
+\usepackage{array}
+
+%------------------------------------------------------------
+
+%------------------------------------------------------------
+%			      Pocz�tek pracy dyplomowej  
+%------------------------------------------------------------
+
+\begin{document}
+
+%------------------------------------------------------------
+%  Dodanie strony tytu�owej wygenerowanej z MojaPG oraz 
+%  						o�wiadczenia
+
+\includepdf{meta/strona_tytulowa.pdf}
+%\includepdf{meta/oswiadczenie.pdf}
+
+%------------------------------------------------------------
+%  Dodanie streszczenia i abstract
+%  						
+
+\input{meta/streszczenie.tex}
+\input{meta/abstract.tex}
+
+%------------------------------------------------------------
+%	Utworzenie spisu tre�ci pracy dyplomowej
+\tableofcontents
+
+%------------------------------------------------------------
+%	Dodanie wykazu wazniejszych skr�t�w i oznacze� 
+\input{meta/oznaczenia.tex}
+
+%------------------------------------------------------------
+%	Dodanie rozdzia��w pracy dyplomowej - g��wne cia�o dokumentu 
+
+\input{rozdzialy/1_wstep_i_cel_pracy.tex}
+\input{rozdzialy/2_analiza_merytoryczna.tex}
+\input{rozdzialy/3_aspekt_techniczny_systemu.tex}
+%\input{rozdzialy/przyklad_rozdzialu_3.tex}
+
+% itd...
+
+% ---------------------- Bibliografia -----------------------
+\input{meta/Bibliografia.tex} % dodanie pliku bibliografii
+% -----------------------------------------------------------
+
+%------------------------------------------------------------
+%	Dodanie wykazu rysunk�w oraz tabeli
+
+\renewcommand{\baselinestretch}{1.0}\normalsize	% interlinia w sekcji wykaz�w
+\addcontentsline{toc}{chapter}{\listfigurename}	% dodanie wykazu rysunk�w do spisu tre�ci
+\listoffigures									% generacja wykazu rysunkw
+
+\addcontentsline{toc}{chapter}{\listtablename}	% dodanie wykazu tabel do spisu tre�ci
+\listoftables									% generacja wykazu tabel
+\renewcommand{\baselinestretch}{1.3}\normalsize	% powr�t do interlinii 1.5
+
+
+% ---------------------- DODATKI -----------------------
+% \chapter*{Dodatek A}
+% \addcontentsline{toc}{chapter}{Dodatek A}
+% Zale�nie od dodatku, zaleca si� dodawa� dodatki jako
+% dokumenty PDF
+% \includepdf{dodatki/dodatek1.pdf}
+
+% -----------------------------------------------------------
+\end{document}
+%------------------------------------------------------------
+			 	%	Koniec pracy dyplomowej  %
+%------------------------------------------------------------
