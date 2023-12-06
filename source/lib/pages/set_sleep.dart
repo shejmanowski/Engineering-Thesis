@@ -111,6 +111,9 @@ class _SetSleepPageState extends State<SetSleepPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         iconTheme: IconThemeData(
+          color: Theme.of(context).colorScheme.inversePrimary,
+        ),
         title: Text(
           'Ustaw czas spania',
           style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
