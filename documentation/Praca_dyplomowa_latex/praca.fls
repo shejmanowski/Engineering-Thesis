@@ -1,8 +1,8 @@
-PWD c:/Users/Szymc/OneDrive/ETI PG/VI semek/Praca dyplomowa inżynierska/Praca_dyplomowa_latex
+PWD c:/Workspace/Engineering-Thesis/documentation/Praca_dyplomowa_latex
 INPUT c:/texlive/2022/texmf.cnf
 INPUT c:/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/Szymc/OneDrive/ETI PG/VI semek/Praca dyplomowa inżynierska/Praca_dyplomowa_latex/praca.tex
+INPUT c:/Workspace/Engineering-Thesis/documentation/Praca_dyplomowa_latex/praca.tex
 OUTPUT praca.log
 INPUT ./szablonPG.cls
 INPUT ./szablonPG.cls
@@ -1302,6 +1302,15 @@ INPUT ./rozdzialy/3_aspekt_techniczny_systemu.tex
 INPUT rozdzialy/3_aspekt_techniczny_systemu.tex
 INPUT ./rozdzialy/3_aspekt_techniczny_systemu.tex
 INPUT rozdzialy/3_aspekt_techniczny_systemu.tex
+INPUT ./img/architektura.png
+INPUT ./img/architektura.png
+INPUT img/architektura.png
+INPUT ./img/architektura.png
+INPUT ./img/architektura.png
+INPUT ./rozdzialy/4_studium_przypadku_zastosowania_systemu.tex
+INPUT rozdzialy/4_studium_przypadku_zastosowania_systemu.tex
+INPUT ./rozdzialy/4_studium_przypadku_zastosowania_systemu.tex
+INPUT rozdzialy/4_studium_przypadku_zastosowania_systemu.tex
 INPUT ./meta/Bibliografia.tex
 INPUT meta/Bibliografia.tex
 INPUT ./meta/Bibliografia.tex

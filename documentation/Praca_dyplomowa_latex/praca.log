@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.28)  3 DEC 2023 20:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.28)  8 DEC 2023 15:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/Szymc/OneDrive/ETI PG/VI semek/Praca dyplomowa inÅ¼ynierska/Praca_dyplomowa_latex/praca.tex"
-(c:/Users/Szymc/OneDrive/ETI PG/VI semek/Praca dyplomowa inÅ¼ynierska/Praca_dyplomowa_latex/praca.tex
+**c:/Workspace/Engineering-Thesis/documentation/Praca_dyplomowa_latex/praca.tex
+(c:/Workspace/Engineering-Thesis/documentation/Praca_dyplomowa_latex/praca.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-04-20> (./szablonPG.cls (c:/texlive/2022/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
@@ -862,7 +862,7 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 \c@lstlisting=\count352
-<meta/strona_tytulowa.pdf, id=90, 597.51233pt x 845.0471pt>
+<meta/strona_tytulowa.pdf, id=126, 597.51233pt x 845.0471pt>
 File: meta/strona_tytulowa.pdf Graphic file (type pdf)
 <use meta/strona_tytulowa.pdf>
 Package pdftex.def Info: meta/strona_tytulowa.pdf  used on input line 20.
@@ -871,7 +871,7 @@ File: meta/strona_tytulowa.pdf Graphic file (type pdf)
 <use meta/strona_tytulowa.pdf>
 Package pdftex.def Info: meta/strona_tytulowa.pdf  used on input line 20.
 (pdftex.def)             Requested size: 597.51086pt x 845.04504pt.
-<meta/strona_tytulowa.pdf, id=93, page=1, 597.51233pt x 845.0471pt>
+<meta/strona_tytulowa.pdf, id=129, page=1, 597.51233pt x 845.0471pt>
 File: meta/strona_tytulowa.pdf Graphic file (type pdf)
 <use meta/strona_tytulowa.pdf, page 1>
 Package pdftex.def Info: meta/strona_tytulowa.pdf , page1 used on input line 20.
@@ -957,23 +957,23 @@ LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <8> on input line 95.
 LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <6> on input line 95.
-<img/zen.jpg, id=197, 361.35pt x 642.4pt>
+<img/zen.jpg, id=251, 361.35pt x 642.4pt>
 File: img/zen.jpg Graphic file (type jpg)
 <use img/zen.jpg>
 Package pdftex.def Info: img/zen.jpg  used on input line 123.
 (pdftex.def)             Requested size: 361.34912pt x 642.39844pt.
-<img/zen2.jpg, id=198, 361.35pt x 642.4pt>
+<img/zen2.jpg, id=252, 361.35pt x 642.4pt>
 File: img/zen2.jpg Graphic file (type jpg)
 <use img/zen2.jpg>
 Package pdftex.def Info: img/zen2.jpg  used on input line 125.
 (pdftex.def)             Requested size: 361.34912pt x 642.39844pt.
  [8]
-<img/senvello.jpg, id=210, 725.71124pt x 1445.4pt>
+<img/senvello.jpg, id=264, 725.71124pt x 1445.4pt>
 File: img/senvello.jpg Graphic file (type jpg)
 <use img/senvello.jpg>
 Package pdftex.def Info: img/senvello.jpg  used on input line 151.
 (pdftex.def)             Requested size: 725.70947pt x 1445.39648pt.
-<img/senvello2.jpg, id=211, 725.71124pt x 1445.4pt>
+<img/senvello2.jpg, id=265, 725.71124pt x 1445.4pt>
 File: img/senvello2.jpg Graphic file (type jpg)
 <use img/senvello2.jpg>
 Package pdftex.def Info: img/senvello2.jpg  used on input line 153.
@@ -990,7 +990,7 @@ LaTeX Font Info:    External font `plex10' loaded for size
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [10 <./img/senvello.jpg> <./img/senvello2.jpg>] [11] [12] [13]
-<img/empathymap.png, id=241, 1204.5pt x 778.91pt>
+<img/empathymap.png, id=295, 1204.5pt x 778.91pt>
 File: img/empathymap.png Graphic file (type png)
 <use img/empathymap.png>
 Package pdftex.def Info: img/empathymap.png  used on input line 437.
@@ -1003,35 +1003,69 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Rozdzia\PlPrIeC {\l } 3.
 [21
 
-]) (./meta/Bibliografia.tex [22]
+] [22]
+<img/architektura.png, id=342, 733.99219pt x 421.575pt>
+File: img/architektura.png Graphic file (type png)
+<use img/architektura.png>
+Package pdftex.def Info: img/architektura.png  used on input line 154.
+(pdftex.def)             Requested size: 426.79137pt x 245.13763pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./rozdzialy/4_studium_przypadku_zastosowania_systemu.tex [23] [24 <./img/architektura.png>]
+Rozdzia\PlPrIeC {\l } 4.
+[25
+
+] [26]
+Overfull \hbox (2.21535pt too wide) in paragraph at lines 114--121
+\T1/phv/m/n/10 ska¢ prze-py-ta-nie osób, któ-re po-sia-da-j¡ zró»-ni-co-wa-ne po-trze-by zdro-wot-ne. Ba-da-nie uwzgl¦d-
+ []
+
+[27]
+Overfull \hbox (3.78386pt too wide) in paragraph at lines 168--173
+[]\T1/phv/m/n/10 Odpowiedzi po-twier-dza-j¡, »e stwo-rzo-ny in-ter-fejs u»yt-
+ []
+
+
+Overfull \hbox (5.40439pt too wide) in paragraph at lines 173--177
+[]\T1/phv/m/n/10 Jednoznacznie stwier-dzo-no po-zy-tyw-
+ []
+
+
+Overfull \hbox (7.64523pt too wide) in paragraph at lines 191--197
+[]\T1/phv/m/n/10 Niektórzy u»yt-kow-ni-cy wy-ra-zi-li ch¦¢ wi¦k-szej mo»-
+ []
+
+) (./meta/Bibliografia.tex [28]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
 (Font)              Font shape `T1/phv/m/sl' tried instead on input line 10.
-) [23
+) [29
 
 ] (./praca.lof)
 \tf@lof=\write6
 \openout6 = `praca.lof'.
 
- [24
+ [30
 
 ] (./praca.lot)
 \tf@lot=\write7
 \openout7 = `praca.lot'.
 
- [25
+ [31
 
 ] (./praca.aux)
 Package rerunfilecheck Info: File `praca.out' has not changed.
-(rerunfilecheck)             Checksum: 1F1CDAB78B75EA9DAED341D17EDE5BED;3416.
+(rerunfilecheck)             Checksum: 1730DE9077B7834C5657DD222D4CD559;4967.
  ) 
 Here is how much of TeX's memory you used:
- 28807 strings out of 478233
- 545946 string characters out of 5847836
- 841421 words of memory out of 5000000
- 46415 multiletter control sequences out of 15000+600000
+ 28846 strings out of 478233
+ 546674 string characters out of 5847836
+ 842548 words of memory out of 5000000
+ 46434 multiletter control sequences out of 15000+600000
  512119 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,17n,94p,855b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,17n,94p,830b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist, replaced by a fixed one
 
@@ -1051,10 +1085,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on praca.pdf (25 pages, 1666560 bytes).
+Output written on praca.pdf (31 pages, 1734516 bytes).
 PDF statistics:
- 344 PDF objects out of 1000 (max. 8388607)
- 269 compressed objects within 3 object streams
- 68 named destinations out of 1000 (max. 500000)
- 226 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 432 PDF objects out of 1000 (max. 8388607)
+ 339 compressed objects within 4 object streams
+ 84 named destinations out of 1000 (max. 500000)
+ 303 words of extra memory for PDF output out of 10000 (max. 10000000)
 
