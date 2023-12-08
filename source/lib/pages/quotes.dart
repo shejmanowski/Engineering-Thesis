@@ -105,7 +105,7 @@ class _QuotesPageState extends State<QuotesPage> {
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Text(
-                            "Author: ${snapshot.data![1]}",
+                            "Autor: ${snapshot.data![1]}",
                             style: const TextStyle(
                               fontSize: 15,
                               fontStyle: FontStyle.italic, // Dodaj kursywę

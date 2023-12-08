@@ -9,6 +9,9 @@ class SubPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         iconTheme: IconThemeData(
+          color: Theme.of(context).colorScheme.inversePrimary,
+        ),
         title: Text(
           'Dobre praktyki:',
           style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),

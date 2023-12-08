@@ -56,11 +56,11 @@ class _HomePageState extends State<HomePage> {
   ];
 
   final List<String> _pagesNames = const [
-    "HOME",
-    "SLEEP",
-    "QUOTES",
-    "TASKS",
-    "JOURNAL",
+    "STRONA GŁÓWNA",
+    "SENNIK",
+    "CYTATY",
+    "ZADANIA",
+    "DZIENNIK",
   ];
 
   @override

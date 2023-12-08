@@ -50,6 +50,9 @@ class _FirestoreDataPageState extends State<FirestoreDataPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         iconTheme: IconThemeData(
+          color: Theme.of(context).colorScheme.inversePrimary,
+        ),
         title: Text(
           'Twoja historia',
           style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
